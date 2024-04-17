@@ -1,0 +1,52 @@
+[
+    {
+        "question":"如何删除wordpress历史修订版本和自动草稿？",
+        "answer":"将下列代码加入function.php即可，不需清理时请注释此代码，否则发布文章时会出错！！！<br/>auto-draft代表自动草稿，revision代表历史版本。<br/><pre>$wpdb->query( \"DELETE FROM $wpdb->posts WHERE post_status='auto-draft' or post_type = 'revision'\" );</pre>",
+        "label":"WordPress"
+    },
+    {
+        "question":"vi/vim编辑完文件显示文件只读（没有写权限）怎么办？",
+        "answer":"用sudo将当前文件内容通过管道符号重新输出到当前文件即可。<br/><pre>%! sudo tee % > /dev/null</pre>",
+        "label":"Linux"
+    },
+    {
+        "question":"root用户安装的conda，普通用户找不到命令？",
+        "answer":"普通用户需执行以下操作将conda路径等系统环境变量信息写入bashrc文件中。<br/>假设你的miniconda安装目录在/usr/local/:<br/><pre>/usr/local/miniconda3/bin/conda init bash</pre>",
+        "label":"Linux,Conda"
+    },
+    {
+        "question":"Linux下conda移植环境时报错：Collecting package metadata (repodata.json): / Killed？",
+        "answer":"内存不足，添加更多RAM或<a href='https://yidi.space/240.html'>创建Swap交换空间。</a>",
+        "label":"Linux,Conda"
+    },
+    {
+        "question":"使用pip install sklearn安装sklearn不成功？",
+        "answer":"sklearn库的标准名字：scikit-learn，故应该用pip install scikit-learn安装sklearn。",
+        "label":"Python"
+    },
+    {
+        "question":"临时更换pip安装源：",
+        "answer":"使用-i参数使用国内源：<br/><pre>阿里云:http://mirrors.aliyun.com/pypi/simple/<br/>中国科技大学:https://pypi.mirrors.ustc.edu.cn/simple/<br/>豆瓣(douban):http://pypi.douban.com/simple/<br/清华大学:https://pypi.tuna.tsinghua.edu.cn/simple/<br/>中国科学技术大学:http://pypi.mirrors.ustc.edu.cn/simple/<br/></pre>",
+        "label":"Python"
+    },
+    {
+        "question":"Linux下如何批量替换多个文件中的字符串？",
+        "answer":"<pre>sed -i \"s/原字符串/新字符串/g\" `grep 原字符串 -rl 所在目录`</pre>",
+        "label":"Linux"
+    },
+    {
+        "question":"如何设置shell不自动激活Conda基础环境？",
+        "answer":"<pre>conda config --set auto_activate_base false</pre>",
+        "label":"Conda"
+    },
+    {
+        "question":"设置/取消git bash代理？",
+        "answer":"设置代理：<pre>git config --global http.proxy https://127.0.0.1:7890<br/>git config --global https.proxy https://127.0.0.1:7890</pre>取消代理：<pre>git config --global --unset http.proxy<br/>git config --global --unset https.proxy</pre>",
+        "label":"Github"
+    },
+    {
+        "question":"如何赋予用户sudo权限？",
+        "answer":"<pre>echo \"username  ALL=(ALL) NOPASSWD:ALL\" | tee /etc/sudoers.d/username</pre>",
+        "label":"Linux"
+    }
+]

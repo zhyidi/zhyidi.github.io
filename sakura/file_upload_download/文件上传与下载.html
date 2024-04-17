@@ -1,0 +1,31 @@
+<!DOCTYPR html>
+<html lang="en">
+<head>
+	<script src="https://cdn.bootcss.com/jquery/3.6.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+</head>
+<body>
+<h3>上传</h3>
+<p>
+同时传输数量限制：1<br/>
+单文件大小限制：50MB<br/>
+<span style="color: blue;"><strong>记住上传时档案的完整名字(包括后缀名)，重名将上传失败!</strong></span>
+</p>
+
+<form method="POST" action="https://yidi.space/wp-admin/yidi/file-upload.php" enctype="multipart/form-data">
+	<div class="form-group col-md-5">
+		<input type="file" name="myfile" id="myfile">
+	</div>
+	<input class="btn btn-default" type="submit" value="上传">
+</form>
+
+<h3>下载</h3>
+<p>下载速率峰值：4Mb/s</p>
+<form method="POST" action="https://yidi.space/wp-admin/yidi/file-download.php">
+	<div class="form-group col-md-5">
+		<input class="form-control" type="text" name="filename" placeholder="输入下载的文件名（包括后缀）">
+	</div>
+	<input class="btn btn-default" type="submit" value="下载">
+</form>
+</body>
